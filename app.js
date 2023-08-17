@@ -31,6 +31,7 @@ app.use((req, res, next) => {
     "https://i-cart-frontend.vercel.app"
   );
   res.setHeader("Access-Control-Allow-Credentials", "true");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   next();
 });
 
