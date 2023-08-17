@@ -36,24 +36,24 @@ app.use((req, res, next) => {
 
 app.use(cors());
 
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      const allowedOrigins = [
-        process.env.FRONTEND_URL,
-        process.env.FRONTEND_URL_2,
-        process.env.FRONTEND_URL_3,
-      ];
-      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-        callback(null, true);
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
-    credentials: true,
-    optionsSuccessStatus: 200,
-  })
-);
+// app.use(
+//   cors({
+//     origin: function (origin, callback) {
+//       const allowedOrigins = [
+//         process.env.FRONTEND_URL,
+//         process.env.FRONTEND_URL_2,
+//         process.env.FRONTEND_URL_3,
+//       ];
+//       if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+//         callback(null, true);
+//       } else {
+//         callback(new Error("Not allowed by CORS"));
+//       }
+//     },
+//     credentials: true,
+//     optionsSuccessStatus: 200,
+//   })
+// );
 
 app.get("/api/v1/order/getkey", (req, res) => {
   res.status(200).json({ key: process.env.RAZORPAY_API_KEY });
