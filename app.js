@@ -35,7 +35,13 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(cors({ credentials: true, optionsSuccessStatus: 200 }));
+app.use(
+  cors({
+    origin: "https://i-cart-frontend.vercel.app",
+    credentials: true,
+    optionsSuccessStatus: 200,
+  })
+);
 
 // app.use(
 //   cors({
