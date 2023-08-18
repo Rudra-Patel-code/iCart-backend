@@ -3,7 +3,7 @@ import { asyncHandler } from "../middlewares/asyncHandler.js";
 import User from "../models/userModel.js";
 
 const cookieOptions = {
-  httpOnly: true,
+  // httpOnly: true,
   secure: true,
   sameSite: "none",
 };
