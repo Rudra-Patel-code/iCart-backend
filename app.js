@@ -20,6 +20,9 @@ config({
 
 const app = express();
 
+app.use(cookieParser());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 const allowedOrigins = [
   "https://i-cart-frontend.vercel.app",
   "https://icart-frontend.onrender.com",
@@ -89,9 +92,6 @@ app.use((req, res, next) => {
 // };
 
 // USING MIDDLEWARES
-app.use(cookieParser());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
 app.get("/api/v1/order/getkey", (req, res) => {
   res.status(200).json({ key: process.env.RAZORPAY_API_KEY });
