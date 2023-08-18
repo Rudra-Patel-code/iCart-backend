@@ -113,7 +113,7 @@ export const paymentVerification = asyncHandler(async (req, res, next) => {
     });
 
     res.redirect(
-      `http://localhost:5173/shipping/success?ref=${razorpay_payment_id}&payId=${payment._id}`
+      `${process.env.FRONTEND_URL}/shipping/success?ref=${razorpay_payment_id}&payId=${payment._id}`
     );
   }
 });
