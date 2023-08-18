@@ -113,7 +113,7 @@ export const paymentVerification = asyncHandler(async (req, res, next) => {
     });
 
     res.redirect(
-      `${process.env.FRONTEND_URL}/shipping/success?ref=${razorpay_payment_id}&payId=${payment._id}`
+      `https://i-cart-frontend.vercel.app/shipping/success?ref=${razorpay_payment_id}&payId=${payment._id}`
     );
   }
 });
